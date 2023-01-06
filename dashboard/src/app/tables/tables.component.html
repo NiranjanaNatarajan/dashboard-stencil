@@ -1,0 +1,38 @@
+<!-- <prime-table lists="{{this.products | json}}"></prime-table> -->
+<!-- <prime-table lists='[{"category": "erwer", "quantity": 1, "name": "dsfsdf", "code": "dsfsdf"},
+{"category": "asasaaas", "quantity": 1, "name": "ddsdsdsds", "code": "fdcxfdfds"}, {"category": "liiyuty", "quantity": 1, "name": "vcvcv", "code": "sasasa"}]'></prime-table> -->
+<h3><b>{{header}} :</b></h3>
+<table>
+  <tr [ngStyle]="{'color': color}">
+    <th>Name</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Code</th>
+  </tr>
+  <!-- <span *ngFor="let item of products"> -->
+    <tr *ngFor="let item of products">
+        <td>{{item.name}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.code}}</td>
+      </tr>
+  <!-- </span> -->
+</table><!-- <h3><b>Products :</b></h3>
+<p-table [value]="products" style="text-align: center;">
+    <ng-template pTemplate="header">
+        <tr style="color: brown;">
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{product.code}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.quantity}}</td>
+        </tr>
+    </ng-template>
+</p-table> -->

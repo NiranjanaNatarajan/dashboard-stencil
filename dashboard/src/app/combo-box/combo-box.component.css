@@ -1,0 +1,75 @@
+.combobox {
+    margin: auto;
+}
+.combobox-input {
+    width: 330px;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 2px solid rgb(165, 112, 112);
+}
+.combobox-input:focus {
+    outline-style: none;
+}
+.combobox-options {
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    width: 350px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 2px 2px 2px 2px #ccc;
+    z-index: 1;
+}
+.selected {
+    color: cornsilk;
+    background-color: rgb(165, 112, 112);
+}
+list-item {
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+}
+list-item:hover {
+    background-color: grey;
+    color: white;
+}
+.error-text {
+    color: rgb(165, 112, 112);
+}
+.error {
+    border: 1px solid red;
+}
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
