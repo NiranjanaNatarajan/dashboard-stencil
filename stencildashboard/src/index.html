@@ -9,12 +9,25 @@
     <script nomodule src="/build/stencildashboard.js"></script>
   </head>
   <body>
+
+    <my-component show-fill-days="false"></my-component>
+
+    <script>
+      const calendar = document.querySelector('my-component');
+      calendar.dayNames = [
+        'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+      ];
+      calendar.monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+    </script>
+<!-- 
     <prime-table lists='[{"category": "erwer", "quantity": 1, "name": "dsfsdf", "code": "dsfsdf"},
     {"category": "asasaaas", "quantity": 1, "name": "ddsdsdsds", "code": "fdcxfdfds"}, {"category": "liiyuty", "quantity": 1, "name": "vcvcv", "code": "sasasa"}]'></prime-table>
     <z-combobox></z-combobox>
     <combo-box></combo-box>
     <charts-dthree style="margin: 200px;" data='[{"value": 2, "tag": "Netflix"},
     {"value": 5, "tag": "Comida"}, {"value": 8, "tag": "Alquiler"}, {"value": 2, "tag": "Gasolina"},
-     {"value": 5, "tag": "Ropa"}]'></charts-dthree>
+     {"value": 5, "tag": "Ropa"}]'></charts-dthree> -->
   </body>
 </html>

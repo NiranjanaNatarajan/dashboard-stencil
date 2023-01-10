@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { CalenderComponent } from './calender/calender.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ButtonModule } from 'primeng/button';
     NavigationComponent,
     ChartsComponent,
     ComboBoxComponent,
-    TablesComponent
+    TablesComponent,
+    CalenderComponent
   ],
   imports: [
     BrowserModule,

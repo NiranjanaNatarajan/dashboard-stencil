@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { CalendarEntry } from "./utils/calendar-entry";
 export namespace Components {
     interface ChartsDthree {
         "data": string;
@@ -12,6 +13,11 @@ export namespace Components {
         "width": number;
     }
     interface ComboBox {
+    }
+    interface MyComponent {
+        "dayNames": string[];
+        "monthNames": string[];
+        "showFillDays": boolean;
     }
     interface PrimeTable {
         "lists": string;
@@ -26,6 +32,10 @@ export namespace Components {
         "label": string;
         "placeholder": string;
     }
+}
+export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyComponentElement;
 }
 export interface ZComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -44,6 +54,12 @@ declare global {
         prototype: HTMLComboBoxElement;
         new (): HTMLComboBoxElement;
     };
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
+    };
     interface HTMLPrimeTableElement extends Components.PrimeTable, HTMLStencilElement {
     }
     var HTMLPrimeTableElement: {
@@ -59,6 +75,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "charts-dthree": HTMLChartsDthreeElement;
         "combo-box": HTMLComboBoxElement;
+        "my-component": HTMLMyComponentElement;
         "prime-table": HTMLPrimeTableElement;
         "z-combobox": HTMLZComboboxElement;
     }
@@ -70,6 +87,13 @@ declare namespace LocalJSX {
         "width"?: number;
     }
     interface ComboBox {
+    }
+    interface MyComponent {
+        "dayNames"?: string[];
+        "monthNames"?: string[];
+        "onDayChanged"?: (event: MyComponentCustomEvent<CalendarEntry>) => void;
+        "onMonthChanged"?: (event: MyComponentCustomEvent<CalendarEntry>) => void;
+        "showFillDays"?: boolean;
     }
     interface PrimeTable {
         "lists"?: string;
@@ -88,6 +112,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "charts-dthree": ChartsDthree;
         "combo-box": ComboBox;
+        "my-component": MyComponent;
         "prime-table": PrimeTable;
         "z-combobox": ZCombobox;
     }
@@ -98,6 +123,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "charts-dthree": LocalJSX.ChartsDthree & JSXBase.HTMLAttributes<HTMLChartsDthreeElement>;
             "combo-box": LocalJSX.ComboBox & JSXBase.HTMLAttributes<HTMLComboBoxElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "prime-table": LocalJSX.PrimeTable & JSXBase.HTMLAttributes<HTMLPrimeTableElement>;
             "z-combobox": LocalJSX.ZCombobox & JSXBase.HTMLAttributes<HTMLZComboboxElement>;
         }
