@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  margin: 2em;
+  width: 580px !important;
+  height: 250px !important;
+}
+.container__jigsaw {
+  /* width: 908px; */
+  /* height: 908px; */
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 2em 0 0;
+}
+.jigsaw__segment {
+  width: 125px;
+  height: 125px;
+  border: 1px dotted red;
+}
+.container__controls {
+  width: 280px;
+  display: flex;
+  flex-flow: column;
+}
+.container__controls h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.0rem;
+  color: rgba(68, 68, 68, 1);
+  margin-top: 0;
+} 
+button {
+  border: none;
+  background: none;
+  padding: 1.25rem 2em;
+  font-size: 1.2rem;
+  color: rgba(68, 68, 68, 1);
+  background-color: rgba(83, 156, 204, 0.75);
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:active,
+button:hover {
+  background-color: rgba(125, 183, 221, 0.75);
+}
+.controls__button {
+  display: block;
+  width: 180px;
+  margin: 0 0 2em 0;
+}
