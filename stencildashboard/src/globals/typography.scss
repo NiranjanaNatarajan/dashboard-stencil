@@ -1,0 +1,55 @@
+:root {
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  --font-family-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  --font-size: 16px;
+  --line-height: 1.5;
+}
+
+@mixin text-preset-display-1 {
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 64px;
+}
+
+@mixin text-preset-display-2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+}
+
+@mixin text-preset-display-3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@mixin text-preset-body-1 {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@mixin text-preset-body-2 {
+  font-weight: normal;
+  font-size: .64rem;
+  line-height: 2rem;
+}
+
+html {
+  @include text-preset-body-1;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family-sans-serif);
+  color: var(--color-ink);
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0 }
+
+h1 { @include text-preset-display-1 }
+h2 { @include text-preset-display-2 }
+h3 { @include text-preset-display-3 }
+
+small {
+  @include text-preset-body-2
+}

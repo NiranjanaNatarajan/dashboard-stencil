@@ -60,13 +60,15 @@ export class ToDoCards implements ComponentInterface {
         </div>
       </div>
 
-
+    let imgClick = <x-modal title="Important!" visible>
+      <p>This is some really important stuff</p>
+    </x-modal>;
 
     return (
       <div class="column" onDblClick={this.toggleEdition}>
         <div class="card">
           {todoTemplate}
-          <div class="card-body">
+          <div class="card-body">{imgClick}
             <img src={this.cardData.cardImg} />
           </div>
           <div>₹ {this.cardData.price}</div>
@@ -74,5 +76,4 @@ export class ToDoCards implements ComponentInterface {
       </div>
     );
   }
-
 }

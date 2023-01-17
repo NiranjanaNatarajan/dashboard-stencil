@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/stencildashboard.esm.js"></script>
-    <script nomodule src="/build/stencildashboard.js"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
 
-    <my-component show-fill-days="false"></my-component>
+  <script type="module" src="/build/stencildashboard.esm.js"></script>
+  <script nomodule src="/build/stencildashboard.js"></script>
+  <link href="/build/stencildashboard.css" rel="stylesheet">
 
+  <!-- <script>
+    document.addEventListener('uploadCompleted', (e) => console.log(e));
+  </script> -->
+</head>
+
+<body>
+  <!-- <x-modal title="Important!" visible>
+	  <p>This is some really important stuff</p>
+	</x-modal> -->
+  <app-root></app-root>
+  <!-- <jigsaw-manager></jigsaw-manager> -->
+  <!-- <z-combobox></z-combobox> -->
+  <!-- <combo-box></combo-box> -->
+  <!-- <h2>Select Image File To Display</h2>
+<file-upload></file-upload>
+<h2>Selected Image file : <span style="color: blueviolet;">"thumbnail_12-16-dec-2022-1.png"</span></h2> -->
+  <!-- <my-component show-fill-days="false"></my-component>
     <script>
       const calendar = document.querySelector('my-component');
       calendar.dayNames = [
@@ -20,14 +35,22 @@
       calendar.monthNames = [
         'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
       ];
+    </script> -->
+    <script>
+      var modal = document.querySelector("x-modal");
+      modal.addEventListener("ok", function () {
+        console.log("ok");
+      });
+      modal.addEventListener("cancel", function () {
+        console.log("cancel");
+      });
     </script>
-<!-- 
+  <!-- 
     <prime-table lists='[{"category": "erwer", "quantity": 1, "name": "dsfsdf", "code": "dsfsdf"},
     {"category": "asasaaas", "quantity": 1, "name": "ddsdsdsds", "code": "fdcxfdfds"}, {"category": "liiyuty", "quantity": 1, "name": "vcvcv", "code": "sasasa"}]'></prime-table>
-    <z-combobox></z-combobox>
-    <combo-box></combo-box>
     <charts-dthree style="margin: 200px;" data='[{"value": 2, "tag": "Netflix"},
     {"value": 5, "tag": "Comida"}, {"value": 8, "tag": "Alquiler"}, {"value": 2, "tag": "Gasolina"},
      {"value": 5, "tag": "Ropa"}]'></charts-dthree> -->
-  </body>
+</body>
+
 </html>

@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -23,6 +24,8 @@ import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CalenderComponent } from './calender/calender.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { CalenderComponent } from './calender/calender.component';
     ChartsComponent,
     ComboBoxComponent,
     TablesComponent,
-    CalenderComponent
+    CalenderComponent,
+    ProgressBarComponent,
+    DragDropComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { CalenderComponent } from './calender/calender.component';
     MatIconModule,
     MatButtonModule,
     LayoutModule,
+    DragDropModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule

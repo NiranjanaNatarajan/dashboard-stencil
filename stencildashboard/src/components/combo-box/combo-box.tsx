@@ -10,7 +10,7 @@ export class ComboBox {
   render() {
     return (
       <Host>
-        <slot></slot>
+        <slot>Combo-Box</slot>
       </Host>
     );
   }

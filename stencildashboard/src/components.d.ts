@@ -37,6 +37,10 @@ export namespace Components {
     interface ToDoCards {
         "cardData": CardDataI;
     }
+    interface XModal {
+        "title": string;
+        "visible": boolean;
+    }
     interface ZPalette {
     }
     interface ZPaletteItem {
@@ -59,6 +63,10 @@ export interface ToDoCardListCustomEvent<T> extends CustomEvent<T> {
 export interface ToDoCardsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLToDoCardsElement;
+}
+export interface XModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLXModalElement;
 }
 declare global {
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
@@ -121,6 +129,12 @@ declare global {
         prototype: HTMLToDoCardsElement;
         new (): HTMLToDoCardsElement;
     };
+    interface HTMLXModalElement extends Components.XModal, HTMLStencilElement {
+    }
+    var HTMLXModalElement: {
+        prototype: HTMLXModalElement;
+        new (): HTMLXModalElement;
+    };
     interface HTMLZPaletteElement extends Components.ZPalette, HTMLStencilElement {
     }
     var HTMLZPaletteElement: {
@@ -144,6 +158,7 @@ declare global {
         "prime-table": HTMLPrimeTableElement;
         "to-do-card-list": HTMLToDoCardListElement;
         "to-do-cards": HTMLToDoCardsElement;
+        "x-modal": HTMLXModalElement;
         "z-palette": HTMLZPaletteElement;
         "z-palette-item": HTMLZPaletteItemElement;
     }
@@ -184,6 +199,12 @@ declare namespace LocalJSX {
         "onRemoveTodoTask"?: (event: ToDoCardsCustomEvent<CardDataI>) => void;
         "onUpdateTodoTask"?: (event: ToDoCardsCustomEvent<CardDataI>) => void;
     }
+    interface XModal {
+        "onCancel"?: (event: XModalCustomEvent<any>) => void;
+        "onOk"?: (event: XModalCustomEvent<any>) => void;
+        "title"?: string;
+        "visible"?: boolean;
+    }
     interface ZPalette {
     }
     interface ZPaletteItem {
@@ -201,6 +222,7 @@ declare namespace LocalJSX {
         "prime-table": PrimeTable;
         "to-do-card-list": ToDoCardList;
         "to-do-cards": ToDoCards;
+        "x-modal": XModal;
         "z-palette": ZPalette;
         "z-palette-item": ZPaletteItem;
     }
@@ -219,6 +241,7 @@ declare module "@stencil/core" {
             "prime-table": LocalJSX.PrimeTable & JSXBase.HTMLAttributes<HTMLPrimeTableElement>;
             "to-do-card-list": LocalJSX.ToDoCardList & JSXBase.HTMLAttributes<HTMLToDoCardListElement>;
             "to-do-cards": LocalJSX.ToDoCards & JSXBase.HTMLAttributes<HTMLToDoCardsElement>;
+            "x-modal": LocalJSX.XModal & JSXBase.HTMLAttributes<HTMLXModalElement>;
             "z-palette": LocalJSX.ZPalette & JSXBase.HTMLAttributes<HTMLZPaletteElement>;
             "z-palette-item": LocalJSX.ZPaletteItem & JSXBase.HTMLAttributes<HTMLZPaletteItemElement>;
         }
